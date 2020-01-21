@@ -10,14 +10,23 @@ const onRequest = (request, response) => {
         htmlHandler.getIndex(request, response);
         break;
     case '/party.mp4':
-        mediaHandler.getParty(request, response);
+        //mediaHandler.getParty(request, response);
+        mediaHandler.loadFile(request, response, "../client/party.mp4", "video/mp4");
         break;
     case '/page2':
         htmlHandler.getPage2(request, response);
-        break;        
+        break;
+    case '/bling.mp3':
+        mediaHandler.loadFile(request, response, "../client/bling.mp3", "audio/mpeg");
+        break;
+    case "/page3":
+        htmlHandler.getPage3(request, response);
+        break;
+    case "/bird.mp4":
+        mediaHandler.loadFile(request, response, "../client/bird.mp4", "video/mp4");
     default:
-      htmlHandler.getIndex(request, response);
-      break;
+        htmlHandler.getIndex(request, response);
+        break;
   }
 };
 
